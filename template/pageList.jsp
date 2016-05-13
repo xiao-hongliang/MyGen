@@ -785,6 +785,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<#elseif (add.saveType=="img" || add.saveType=="file")>
 				if(d.${add.name } || d.${add.name }>-1){
   					$("#${add.name }_view").src(d.${add.name });
+  				}else{
+  					$("#icon_view").attr("src", "");
   				}
 					<#elseif add.typeName?index_of(".entity")!=-1>
 				if(d.${add.name } || d.${add.name }>-1){
@@ -835,6 +837,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						var fName = d.${add.name }.substring(d.${add.name }.lastIndexOf("/")+1);
 						$("#${add.name }").parent().find(".dropify-filename-inner").html(fName);
 						$("#${add.name }").parent().find(".dropify-render").html("<img src='"+d.${add.name }+"'>");
+					}else{
+						$("#icon").parent().find(".dropify-preview").attr("style","display:none;");
 					}
 						<#elseif add.saveType=="pwd">
 					if(d.${add.name } || d.${add.name }>-1){

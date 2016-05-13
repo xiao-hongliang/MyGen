@@ -49,6 +49,9 @@ function addReset(){
 	$('#form')[0].reset();
 	$("#h_id").val("");
 	$("#form textarea").html("");
+	if($("#icon").length > 0){
+		$("#icon").parent().find(".dropify-preview").attr("style","display:none;");
+	}
 }
 
 /**

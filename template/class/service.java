@@ -40,7 +40,7 @@ public class ${classNameB}Service extends BaseServcie<${classNameB}>{
 	 * @return
 	 */
 	public PageQueryResult<${classNameB}> findByPage(${classNameB}Form form) {
-		WhereBuilder build = form.buildWhereAndParams(null, null);
+		WhereBuilder build = form.buildWhereAndParams(null, "${className}");
 		StringBuffer hql=new StringBuffer("from ${classNameB} ${className}");
 		<#if sqlList??>
 		<#list sqlList as sql>
